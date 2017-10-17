@@ -6,14 +6,12 @@
         name: httpd
         state: present
   
-    #- name: copy configuration file
-    #  copy:
-    #    src: index.html
-    #    des: /var/www/html
+    - name: copy configuration file
+      copy:
+        src: index.html
+        des: /var/www/html
      
     - name: service restart
       service:
         name: httpd
         state: restarted
-    #   service: httpd
-    #   state: restart
