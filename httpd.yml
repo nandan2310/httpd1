@@ -11,5 +11,5 @@
     #  des: /var/www/html
      
     - name: service restart
-      name: httpd
-      state: restart
+       service: httpd
+       state: restart
