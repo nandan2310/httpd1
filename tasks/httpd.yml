@@ -1,0 +1,15 @@
+- name: htttp setup
+  hosts: 192.168.85.128
+  tasks:
+    - name: install htttpd
+      yum:
+        name: httpd
+        state: present
+  
+    - name: copy configuration file
+      src: index.html
+      des: /var/www/html
+     
+    - name: service restart
+      name: httpd
+      state: restart
